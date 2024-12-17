@@ -1,0 +1,26 @@
+<div class="flex flex-col min-h-screen">
+  <header class="bg-gradient-to-r from-red-500 to-green-500 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">
+          <a [routerLink]="'/'" class="text-white">The Movie</a>
+        </h1>
+        <h2 class="text-xl font-medium ml-auto px-5">
+          <a [routerLink]="'/favorites'" class="text-white">Favorites♥</a>
+        </h2>
+        <input #querySearch type="search" (keyup.enter)="OnSearch(querySearch.value)" placeholder="Search movies..." class="px-4 py-2 rounded-full text-gray-800">
+
+    </div>
+  </header>
+  
+  <main class="flex-grow">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center p-4 mt-auto">
+    This website uses 
+    <a href="https://www.themoviedb.org/" 
+      class="text-green-500 hover:text-green-700"
+      target="_blank" 
+      rel="noopener noreferrer">TMDB</a>.
+  </footer>
+</div>
